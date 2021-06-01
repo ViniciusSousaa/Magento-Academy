@@ -7,3 +7,4 @@ ComponentRegistrar::register(
     'Webjump_ControllerWorld',
     __DIR__
 );
+
