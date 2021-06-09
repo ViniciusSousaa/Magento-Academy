@@ -1,0 +1,68 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <!-- Pet Table -->
+    <table name="pet_table" resource="default" engine="innodb">
+        <column xsi:type="int"
+                name="entity_id"
+                padding="10"
+                unsigned="true"
+                identity="true"
+                nullable="false"
+                comment="Entity Id"
+        />
+        <column xsi:type="varchar"
+                name="pet_name"
+                length="255"
+                nullable="false"
+                comment="Pet name"
+        />
+        <column xsi:type="varchar"
+                name="pet_owner"
+                length="255"
+                nullable="false"
+                comment="Pet Owner name"
+        />
+        <column xsi:type="datetime"
+                name="created_at"
+                nullable="false"
+                default="CURRENT_TIMESTAMP"
+                on_update="false"
+        />
+        <column xsi:type="varchar"
+                name="owner_telephone"
+                length="255"
+                nullable="true"
+                comment="Pet Owner name"
+        />
+        <column xsi:type="int"
+                name="owner_id"
+                unsigned="true"
+                padding="10"
+                nullable="false"
+                identity="false"
+                comment="Customer Entity ID"
+        />
+        <constraint xsi:type="primary" referenceId="PET_TABLE_ENTITY_ID">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign"
+                    referenceId="PET_TABLE_ENTITY_ID_CUSTOMER_ENTITY_ENTITY_ID"
+                    table="pet_table"
+                    column="owner_id"
+                    referenceTable="customer_entity"
+                    referenceColumn="entity_id"
+                    onDelete="CASCADE"
+        />
+        <index referenceId="PET_TABLE_PET_NAME" indexType="fulltext">
+            <column name="pet_name"/>
+        </index>
+        <index referenceId="PET_TABLE_PET_OWNER" indexType="fulltext">
+            <column name="pet_owner"/>
+        </index>
+        <index referenceId="PET_TABLE_OWNER_TELEPHONE" indexType="fulltext">
+            <column name="owner_telephone"/>
+        </index>
+        <index referenceId="PET_TABLE_CREATED_AT" indexType="btree">
+            <column name="created_at"/>
+        </index>
+    </table>
+</schema>

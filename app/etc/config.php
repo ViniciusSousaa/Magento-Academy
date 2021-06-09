@@ -246,7 +246,8 @@ return [
         'Vertex_Tax' => 1,
         'Vertex_AddressValidation' => 1,
         'Webjump_ControllerWorld' => 1,
-        'Yotpo_Yotpo' => 1,
-        'webjump_HelloWorld' => 1
+        'Webjump_HelloWorld' => 1,
+        'Webjump_Pet' => 1,
+        'Yotpo_Yotpo' => 1
     ]
 ];
