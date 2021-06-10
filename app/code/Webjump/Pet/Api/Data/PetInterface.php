@@ -6,22 +6,6 @@ namespace Webjump\Pet\Api\Data;
 interface PetInterface
 {
     /**
-     * Return Pet Entity Id
-     *
-     * @return int
-     */
-    public function getEntityId():int;
-
-    /**
-     * Set Pet Entity Id
-     *
-     * @param int $entityId
-     *
-     * @return void
-     */
-    public function setEntityId(int $entityId):void;
-
-    /**
      * Return Pet Name
      *
      * @return string

@@ -15,15 +15,6 @@ class Pet extends AbstractModel implements PetInterface
     {
         $this->_init(PetResource::class);
     }
-    public function getEntityId(): int
-    {
-        return (int) $this->getData("entity_id");
-    }
-
-    public function setEntityId(int $entityId): void
-    {
-        $this->setData("entity_id", $entityId);
-    }
 
     public function getPetName(): string
     {

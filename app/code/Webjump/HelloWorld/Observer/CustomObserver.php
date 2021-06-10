@@ -7,7 +7,7 @@ use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Event\Observer;
 use Psr\Log\LoggerInterface;
 
-class CustomObserver 
+class CustomObserver implements ObserverInterface
 {
     private $logger;
 
@@ -22,4 +22,4 @@ class CustomObserver
     }
 }
 
-   
+
